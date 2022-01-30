@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+.bg {
+  background-image: url("./asset/bg.jpeg");
+  position: relative;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.bg::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(91, 148, 201, .2), rgba(91, 148, 201, .75));
+  z-index: -1;
+}
+.bg.warm::before {
+  background-image: linear-gradient(to bottom, rgba(212, 119, 95, .2), rgba(212, 119, 95, .75));
+}
+main {
+  height: 100vh;
+  min-height: 600px;
+  padding-top: 50px;
+  position: relative;
+  padding: 30px 20px;
+}
+.search-box {
+  margin: 0 auto;
+}
+.search-box .search-bar {
+  display: block;
+  width: 100%;
+  font-size: 30px;
+  border: unset;
+  outline: unset;
+  background-color: rgba(255, 255, 255, .3);
+  padding: .5em;
+  color: #3b3b3b;
+  border-radius: 20px;
+  box-shadow: 0 5px rgba(0, 0, 0, .2);
+  transition: background-color 1s;
+}
+.search-box .search-bar:focus {
+  background-color: rgba(255, 255, 255, .5);
+}
+.location-box {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 600;
+}
+.location {
+  font-size: 30px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px rgba(0, 0, 0, .2);
+}
+.date {
+  font-weight: 200;
+  font-style: italic;
+  margin: 20px 0;
+}
+.temp {
+  font-size: 60px;
+  background-color: rgba(255, 255, 255, .4);
+  border-radius: 15px;
+  width: fit-content;
+  padding: .2em .5em;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.weather {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.tip {
+  color: rgb(255, 255, 255, .7);
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
 }
